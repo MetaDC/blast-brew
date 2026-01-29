@@ -3417,6 +3417,7 @@ Lazyload CSS
   .mobile-menu .navbar-nav li a {
     padding: 10px 0;
     border-bottom: 1px solid var(--border-color);
+    color: #000;
     transition: all 700ms ease;
   }
   .mobile-menu .navbar-nav li ul {
