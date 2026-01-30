@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coming Soon</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(
+          135deg,
+          #000000 0%,
+          #1a0000 50%,
+          #000000 100%
+        );
+        color: #ffffff;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+      }
+
+      /* Animated background circles */
+      .circle {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.1;
+        animation: float 20s infinite ease-in-out;
+      }
+
+      .circle1 {
+        width: 300px;
+        height: 300px;
+        background: #ff0000;
+        top: -150px;
+        left: -150px;
+        animation-delay: 0s;
+      }
+
+      .circle2 {
+        width: 400px;
+        height: 400px;
+        background: #cc0000;
+        bottom: -200px;
+        right: -200px;
+        animation-delay: 5s;
+      }
+
+      .circle3 {
+        width: 250px;
+        height: 250px;
+        background: #ff3333;
+        top: 50%;
+        right: 10%;
+        animation-delay: 10s;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        33% {
+          transform: translate(50px, -50px) scale(1.1);
+        }
+        66% {
+          transform: translate(-30px, 30px) scale(0.9);
+        }
+      }
+
+      .container {
+        text-align: center;
+        z-index: 10;
+        padding: 20px;
+        max-width: 800px;
+      }
+
+      h1 {
+        font-size: 5rem;
+        font-weight: 900;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 8px;
+        background: linear-gradient(45deg, #ff0000, #ffffff, #ff0000);
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: gradientShift 3s ease infinite;
+      }
+
+      @keyframes gradientShift {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+
+      .subtitle {
+        font-size: 1.5rem;
+        color: #cccccc;
+        margin-bottom: 40px;
+        letter-spacing: 2px;
+      }
+
+      .countdown {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 50px;
+        flex-wrap: wrap;
+      }
+
+      .time-unit {
+        background: rgba(255, 0, 0, 0.1);
+        border: 2px solid #ff0000;
+        border-radius: 10px;
+        padding: 20px 30px;
+        min-width: 120px;
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .time-unit:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+      }
+
+      .time-value {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #ff0000;
+        display: block;
+        line-height: 1;
+      }
+
+      .time-label {
+        font-size: 0.9rem;
+        color: #999999;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 10px;
+        display: block;
+      }
+
+      .notify-form {
+        margin-top: 40px;
+      }
+
+      .email-input {
+        padding: 15px 25px;
+        font-size: 1rem;
+        border: 2px solid #ff0000;
+        background: rgba(0, 0, 0, 0.5);
+        color: #ffffff;
+        border-radius: 50px 0 0 50px;
+        outline: none;
+        width: 300px;
+        transition: border-color 0.3s ease;
+      }
+
+      .email-input:focus {
+        border-color: #ff3333;
+      }
+
+      .email-input::placeholder {
+        color: #666666;
+      }
+
+      .notify-btn {
+        padding: 15px 35px;
+        font-size: 1rem;
+        background: linear-gradient(135deg, #ff0000, #cc0000);
+        color: #ffffff;
+        border: none;
+        border-radius: 0 50px 50px 0;
+        cursor: pointer;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        margin-left: -5px;
+      }
+
+      .notify-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 20px rgba(255, 0, 0, 0.4);
+      }
+
+      .social-links {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .social-icon {
+        width: 50px;
+        height: 50px;
+        border: 2px solid #ff0000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ff0000;
+        text-decoration: none;
+        font-size: 1.5rem;
+        transition: all 0.3s ease;
+      }
+
+      .social-icon:hover {
+        background: #ff0000;
+        color: #000000;
+        transform: rotate(360deg);
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 3rem;
+          letter-spacing: 4px;
+        }
+
+        .subtitle {
+          font-size: 1.2rem;
+        }
+
+        .countdown {
+          gap: 15px;
+        }
+
+        .time-unit {
+          padding: 15px 20px;
+          min-width: 90px;
+        }
+
+        .time-value {
+          font-size: 2rem;
+        }
+
+        .email-input {
+          width: 200px;
+          font-size: 0.9rem;
+        }
+
+        .notify-btn {
+          padding: 15px 25px;
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+    <div class="circle circle3"></div>
+
+    <div class="container">
+      <h1>Coming Soon</h1>
+    </div>
+  </body>
+</html>

@@ -7,10 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="KreativDev" />
 
+
     <!-- Title -->
     <title>Blast & Brew</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/images/logo/favicon.png"
+    />
     <!-- href="assets/images/logo/fav.png" -->
     <!-- Google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com/" />
@@ -106,12 +111,12 @@
                 ></a>
                 <a
                   class="rounded-pill"
-                  href="https://www.dribbble.com/"
+                  href="https://www.facebook.com/blastnbrewsj"
                   target="_blank"
-                  title="dribbble"
-                  ><i class="fab fa-dribbble"></i
+                  title="facebook"
+                  ><i class="fab fa-facebook"></i
                 ></a>
-                <a
+                <!-- <a
                   class="rounded-pill"
                   href="https://www.twitter.com/"
                   target="_blank"
@@ -124,7 +129,7 @@
                   target="_blank"
                   title="youtube"
                   ><i class="fab fa-youtube"></i
-                ></a>
+                ></a> -->
               </div>
             </div>
           </div>
@@ -169,20 +174,29 @@
                                     </ul> -->
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link toggle" href="#">Menu</a>
+                    <a
+                      class="nav-link toggle"
+                      href="assets/pdf/menu.pdf"
+                      target="_blank"
+                      >Menu</a
+                    >
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link toggle">About</a>
+                    <a href="#about" class="nav-link toggle">About</a>
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link toggle" href="#">Careers</a>
+                    <a class="nav-link toggle" href="comingsoon.html"
+                      >Careers</a
+                    >
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link toggle" href="#">Contact Us</a>
+                    <a class="nav-link toggle" href="#footer">Contact Us</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link toggle" href="#">Franchise</a>
+                    <a class="nav-link toggle" href="comingsoon.html"
+                      >Franchise</a
+                    >
                   </li>
                   <!-- <li class="nav-item">
                                     <a class="nav-link toggle" href="#">Shop<i class="fal fa-plus"></i></a>
@@ -281,7 +295,7 @@
                             </div> -->
                 <div class="item">
                   <a
-                    href=""
+                    href="comingsoon.html"
                     class="btn btn-md btn-primary rounded-pill"
                     title="Book a Table"
                     target="_self"
@@ -334,14 +348,14 @@
                 data-aos-delay="250"
               >
                 <a
-                  href=""
+                  href="comingsoon.html"
                   class="btn btn-lg btn-primary rounded-pill"
                   title="Order Now"
                   target="_self"
                   >ORDER ONLINE</a
                 >
                 <a
-                  href="assets/images/menu.pdf"
+                  href="assets/pdf/menu.pdf"
                   class="btn btn-lg btn-outline rounded-pill"
                   title="Show More"
                   target="_blank"
@@ -594,6 +608,7 @@
     <section
       class="about-area about-2 pt-100 pb-60 bg-img"
       data-bg-image="assets/images/about-bg-1.png"
+      id="about"
     >
       <!-- Spacer -->
       <div class="spacer pt-120"></div>
@@ -1602,8 +1617,7 @@
                       >Signature Burgers
                     </a>
                   </h3>
-                  <br />
-                  <br />
+
                   <!-- <div class="product-price mb-15">
                     <span class="h4 new-price color-primary">$10.00</span>
                     <span class="prev-price">$11.00</span>
@@ -1629,10 +1643,10 @@
                       ingredients and bold,<br />satisfying flavors.
                     </p>
                     <a
-                      href
+                      href="assets/pdf/menu.pdf"
                       class="btn btn-lg btn-outline rounded-pill"
                       title="Place Your Order"
-                      target="_self"
+                      target="_blank"
                       >Explore Menu</a
                     >
                   </div>
@@ -1672,10 +1686,10 @@
                       flavors.
                     </p>
                     <a
-                      href
+                      href="assets/pdf/menu.pdf"
                       class="btn btn-lg btn-outline rounded-pill"
                       title="Place Your Order"
-                      target="_self"
+                      target="_blank"
                       >Explore Menu</a
                     >
                   </div>
@@ -1715,10 +1729,10 @@
                       flavor.
                     </p>
                     <a
-                      href
+                      href="assets/pdf/menu.pdf"
                       class="btn btn-lg btn-outline rounded-pill"
                       title="Place Your Order"
-                      target="_self"
+                      target="_blank"
                       >Explore Menu</a
                     >
                   </div>
@@ -2252,11 +2266,12 @@
                       <button
                         class="btn btn-lg btn-primary rounded-pill"
                         type="submit"
+                        onclick="window.open('assets/pdf/menu.pdf', '_blank')"
                       >
                         <span class="d-inline d-sm-none">
                           <i class="fal fa-paper-plane"></i>
                         </span>
-                        <span class="d-none d-sm-inline">LEARN MORE</span>
+                        <span class="d-none d-sm-inline">Explore Menu</span>
                       </button>
                       <!-- <div class="newsletter-form">
                         <form id="newsletterForm">
@@ -2443,6 +2458,7 @@
     <footer
       class="footer-area bg-img bg-cover"
       data-bg-image="assets/images/footer-bg-2.jpg"
+      id="footer"
     >
       <div class="container">
         <div class="footer-top pt-90 pb-60">
@@ -2473,22 +2489,10 @@
                     ><i class="fab fa-instagram"></i
                   ></a>
                   <a
-                    href="https://www.dribbble.com/"
+                    href="https://www.facebook.com/blastnbrewsj"
                     target="_blank"
                     title="Link"
-                    ><i class="fab fa-dribbble"></i
-                  ></a>
-                  <a
-                    href="https://www.twitter.com/"
-                    target="_blank"
-                    title="Link"
-                    ><i class="fab fa-twitter"></i
-                  ></a>
-                  <a
-                    href="https://www.youtube.com/"
-                    target="_blank"
-                    title="Link"
-                    ><i class="fab fa-youtube"></i
+                    ><i class="fab fa-facebook"></i
                   ></a>
                 </div>
               </div>
@@ -2501,19 +2505,25 @@
                     <a href="" target="_self" title="link">Home </a>
                   </li>
                   <li>
-                    <a href="" target="_self" title="link">About</a>
+                    <a href="#about" target="_self" title="link">About</a>
                   </li>
                   <li>
-                    <a href="" target="_self" title="link">Menu</a>
+                    <a href="assets/pdf/menu.pdf" target="_blank" title="link"
+                      >Menu</a
+                    >
                   </li>
                   <li>
-                    <a href="" target="_self" title="link">Careers</a>
+                    <a href="comingsoon.html" target="_self" title="link"
+                      >Careers</a
+                    >
                   </li>
                   <li>
-                    <a href="" target="_self" title="link">Contact</a>
+                    <a href="#footer" target="_self" title="link">Contact</a>
                   </li>
                   <li>
-                    <a href="" target="_self" title="link">Franchise</a>
+                    <a href="comingsoon.html" target="_self" title="link"
+                      >Franchise</a
+                    >
                   </li>
                 </ul>
               </div>
