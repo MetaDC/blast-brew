@@ -993,7 +993,7 @@ ul.list-bullet li {
 ----------------------------------------- */
 /* Theme Color CSS */
 .theme-color-1 {
-  --color-primary: #c19f5f;
+  --color-primary: #d30000;
   --color-primary-rgb: 193, 159, 95;
   --btn-color: var(--color-dark);
 }
@@ -1872,6 +1872,9 @@ Lazyload CSS
 }
 .ratio.ratio-3-4::before {
   padding-bottom: 75%;
+}
+.ratio.ratio-4-5::before {
+  padding-bottom: 125%;
 }
 .ratio.ratio-vertical::before {
   padding-bottom: 164%;
@@ -2805,7 +2808,6 @@ Lazyload CSS
   transform: none;
 }
 .header-area .nav-link:hover,
-.header-area .nav-link.active,
 .header-area .nav-link:focus {
   color: black;
 }
