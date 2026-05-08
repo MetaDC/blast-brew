@@ -6,13 +6,13 @@
     *------------------------------------------------------------ 
 */
 
-!(function($) {
+!(function ($) {
     "use strict";
 
     /*============================================
         Sticky header
     ============================================*/
-    $(window).on("scroll", function() {
+    $(window).on("scroll", function () {
         var header = $(".header-area");
         // If window scroll down .is-sticky class will added to header
         if ($(window).scrollTop() >= 200) {
@@ -26,7 +26,7 @@
     /*============================================
         Mobile menu
     ============================================*/
-    var mobileMenu = function() {
+    var mobileMenu = function () {
         // Variables
         var body = $("body"),
             mainNavbar = $(".main-navbar"),
@@ -36,7 +36,7 @@
             menuToggler = $(".menu-toggler"),
             offCanvasMenu = $("#offcanvasMenu"),
             backdrop,
-            _initializeBackDrop = function() {
+            _initializeBackDrop = function () {
                 backdrop = document.createElement('div');
                 backdrop.className = 'menu-backdrop';
                 backdrop.onclick = function hideOffCanvas() {
@@ -47,7 +47,7 @@
                 document.body.appendChild(backdrop);
             };
 
-        menuToggler.on("click", function() {
+        menuToggler.on("click", function () {
             $(this).toggleClass("active");
             body.toggleClass("mobile-menu-active");
             _initializeBackDrop();
@@ -62,9 +62,9 @@
             body.find(offCanvasMenu).clone(!0).appendTo(cloneInto);
         }
 
-        mobileNavbar.find("li").each(function(index) {
+        mobileNavbar.find("li").each(function (index) {
             var toggleBtn = $(this).children(".toggle")
-            toggleBtn.on("click", function(e) {
+            toggleBtn.on("click", function (e) {
                 $(this)
                     .parent("li")
                     .children("ul")
@@ -75,7 +75,7 @@
         })
 
         // check browser width in real-time
-        var checkBreakpoint = function() {
+        var checkBreakpoint = function () {
             var winWidth = window.innerWidth;
             if (winWidth <= 1199) {
                 mainNavbar.hide();
@@ -88,7 +88,7 @@
         }
         checkBreakpoint();
 
-        $(window).on('resize', function() {
+        $(window).on('resize', function () {
             checkBreakpoint();
         });
     }
@@ -113,7 +113,7 @@
         Image to background image
     ============================================*/
     var bgImage = $(".bg-img")
-    bgImage.each(function() {
+    bgImage.each(function () {
         var el = $(this),
             src = el.attr("data-bg-image");
 
@@ -128,7 +128,7 @@
     /*============================================
         Password icon toggle
     ============================================*/
-    $(".show-password-field").on("click", function() {
+    $(".show-password-field").on("click", function () {
         var showIcon = $(this).children(".show-icon");
         var passwordField = $(this).prev("input");
         showIcon.toggleClass("show");
@@ -167,7 +167,7 @@
         $("#minutes .time").html(minutes);
         $("#seconds .time").html(seconds);
     }
-    setInterval(function() {
+    setInterval(function () {
         makeTimer()
     }, 0);
 
@@ -185,7 +185,7 @@
     ============================================*/
     // Category Slider all
     if ($(".category-slider").length) {
-        $(".category-slider").each(function() {
+        $(".category-slider").each(function () {
             var id = $(this).attr("id");
             var slidePerView = $(this).data("slides-per-view");
             var loops = $(this).data("swiper-loop");
@@ -230,6 +230,48 @@
                 }
             })
         })
+    }
+
+    // Hero Swiper
+    if ($(".heroSwiper").length) {
+        var heroSwiper = new Swiper(".heroSwiper", {
+            loop: true,
+            speed: 1200,
+            effect: "fade",
+            fadeEffect: {
+                crossFade: true
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            on: {
+                init: function () {
+                    // Manual background application if data-bg-image is used
+                    var slides = this.slides;
+                    for (var i = 0; i < slides.length; i++) {
+                        var bg = slides[i].querySelector(".bg-img");
+                        if (bg) {
+                            var src = bg.getAttribute("data-bg-image");
+                            if (src) bg.style.backgroundImage = "url(" + src + ")";
+                        }
+                    }
+                    if (typeof AOS !== 'undefined') AOS.refresh();
+                },
+                slideChangeTransitionStart: function () {
+                    if (typeof AOS !== 'undefined') AOS.refresh();
+                }
+            }
+        });
     }
 
     if ($("#testimonial-slider-1").length) {
@@ -490,30 +532,29 @@
     }
 
     // Stop slider autoplay
-    $(document).ready(function() {
-
-        if ($(".swiper").length) {
-            var mySwiper = document.querySelector(".swiper").swiper
-
-            $(".swiper").mouseenter(function() {
-                mySwiper.autoplay.stop();
-            });
-
-            $(".swiper").mouseleave(function() {
-                mySwiper.autoplay.start();
-            });
-        }
+    $(document).ready(function () {
+        $(".swiper:not(.heroSwiper)").each(function () {
+            var sliderInstance = this.swiper;
+            if (sliderInstance) {
+                $(this).on("mouseenter", function () {
+                    sliderInstance.autoplay.stop();
+                });
+                $(this).on("mouseleave", function () {
+                    sliderInstance.autoplay.start();
+                });
+            }
+        });
     });
 
 
     /*============================================
         Quantity Button
     ============================================*/
-    $(document).on("click", ".quantity-down", function() {
+    $(document).on("click", ".quantity-down", function () {
         var numProduct = Number($(this).next().val());
         if (numProduct > 0) $(this).next().val(numProduct - 1);
     });
-    $(document).on("click", ".quantity-up", function() {
+    $(document).on("click", ".quantity-up", function () {
         var numProduct = Number($(this).prev().val());
         $(this).prev().val(numProduct + 1);
     });
@@ -536,8 +577,8 @@
     ============================================*/
     var parallax = $('.parallax');
 
-    parallax.each(function() {
-        $(this).mousemove(function(e) {
+    parallax.each(function () {
+        $(this).mousemove(function (e) {
             var wx = $(window).width();
             var wy = $(window).height();
             var x = e.pageX - this.offsetLeft;
@@ -546,7 +587,7 @@
             var newy = y - wy / 2;
 
             var parallaxChild = $(this).find('.parallax-img');
-            parallaxChild.each(function() {
+            parallaxChild.each(function () {
                 var speed = $(this).attr('data-speed');
                 if ($(this).attr('data-revert')) speed *= -.2;
                 TweenMax.to($(this), 1, {
@@ -587,7 +628,7 @@
     /*============================================
         Go to top
     ============================================*/
-    $(window).on("scroll", function() {
+    $(window).on("scroll", function () {
         // If window scroll down .active class will added to go-top
         var goTop = $(".go-top");
 
@@ -597,7 +638,7 @@
             goTop.removeClass("active")
         }
     })
-    $(".go-top").on("click", function(e) {
+    $(".go-top").on("click", function (e) {
         $("html, body").animate({
             scrollTop: 0,
         }, 0);
@@ -610,7 +651,7 @@
     $(".niceselect").niceSelect();
 
     var selectList = $(".nice-select .list")
-    $(".nice-select .list").each(function() {
+    $(".nice-select .list").each(function () {
         var list = $(this).children();
         if (list.length > 5) {
             $(this).css({
@@ -624,7 +665,7 @@
     /*============================================
         Lazyload image
     ============================================*/
-    var lazyLoad = function() {
+    var lazyLoad = function () {
         window.lazySizesConfig = window.lazySizesConfig || {};
         window.lazySizesConfig.loadMode = 2;
         lazySizesConfig.preloadAfterLoad = true;
@@ -641,13 +682,13 @@
     /*============================================
         Document on ready
     ============================================*/
-    $(document).ready(function() {
+    $(document).ready(function () {
         lazyLoad()
     })
 
 })(jQuery);
 
-$(window).on("load", function() {
+$(window).on("load", function () {
     const delay = 1000;
     /*============================================
         Preloader
@@ -657,7 +698,7 @@ $(window).on("load", function() {
     /*============================================
         Aos animation
     ============================================*/
-    var aosAnimation = function() {
+    var aosAnimation = function () {
         AOS.init({
             easing: "ease",
             duration: 1200,
