@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 /*-----------------------------------------------------------
 	* Template Name    : Treats - Fast Food & Restaurant HTML Template
 	* Author           : KreativDev
@@ -56,8 +58,8 @@
     Variables CSS
 ----------------------------------------- */
 :root {
-  --font-heading: "Lora", serif;
-  --font-body: "Roboto", sans-serif;
+  --font-heading: "Raleway", serif;
+  --font-body: "Raleway", serif;
   --font-icon: "Font Awesome 5 Pro";
   --font-base: 16px;
   --font-sm: 14px;
@@ -1003,8 +1005,8 @@ ul.list-bullet li {
   --color-primary-rgb: 250, 185, 64;
   --btn-color: var(--color-dark);
   --btn-hover-color: var(--color-white);
-  --font-heading: "Josefin Sans", sans-serif;
-  --font-body: "Lato", sans-serif;
+  --font-heading: "Raleway", serif;
+  --font-body: "Raleway", serif;
 }
 
 .theme-color-3 {
@@ -4024,34 +4026,34 @@ body.mobile-menu-active {
   transform: rotateZ(40deg);
 }
 .category-area.category-2 .swiper-slide:nth-child(1) .card-image::after {
-  background-color: #21c4df;
+  background-color: #d30000;
 }
 .category-area.category-2 .swiper-slide:nth-child(2) .card-image::after {
-  background-color: #ffb228;
+  background-color: #000000;
 }
 .category-area.category-2 .swiper-slide:nth-child(3) .card-image::after {
-  background-color: #00d5ae;
+  background-color: #d30000;
 }
 .category-area.category-2 .swiper-slide:nth-child(4) .card-image::after {
-  background-color: #ff5195;
+  background-color: #000000;
 }
 .category-area.category-2 .swiper-slide:nth-child(5) .card-image::after {
-  background-color: #6b76ff;
+  background-color: #d30000;
 }
 .category-area.category-2 .swiper-slide:nth-child(6) .card-image::after {
-  background-color: #f59872;
+  background-color: #000000;
 }
 .category-area.category-2 .swiper-slide:nth-child(7) .card-image::after {
-  background-color: #e74c3c;
+  background-color: #d30000;
 }
 .category-area.category-2 .swiper-slide:nth-child(8) .card-image::after {
-  background-color: #3c8ce7;
+  background-color: #000000;
 }
 .category-area.category-2 .swiper-slide:nth-child(9) .card-image::after {
-  background-color: #ffaa85;
+  background-color: #d30000;
 }
 .category-area.category-2 .swiper-slide:nth-child(10) .card-image::after {
-  background-color: #3c8ce7;
+  background-color: #000000;
 }
 
 .category-area.category-3 .card {
